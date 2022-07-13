@@ -13,16 +13,9 @@ const config: HardhatUserConfig = {
     },
     mumbai: {
       url: `https://polygon-mumbai.infura.io/v3/a4905e3b34cc498aa5a839bbcf49b8f2`,
-      accounts: [`${process.env.MUMBAI_DEPLOYER_PRIV_KEY}`],
+      accounts: [`ADD PRIVATE KEY HERE`],
     },
-  },
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY
-  },
-  // mocha options can be set here
-  mocha: {
-    // timeout: "300s",
-  },
+  }
 };
 
 export default config;

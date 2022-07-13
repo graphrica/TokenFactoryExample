@@ -29,7 +29,7 @@ describe("Token Factory", function () {
     it("Should Deploy an ERC20 Token", async function () {
       const { tokenFactory, owner } = await setupContracts();
 
-      await (await tokenFactory.connect(owner).createToken(ethers.utils.parseUnits("10000"), "TestToken", "TST")).wait();
+      await tokenFactory.connect(owner).createToken(ethers.utils.parseUnits("10000"), "TestToken", "TST");
       var tokenAddress = await tokenFactory.getTokenAddressAt(0);
 
       var token = await ethers.getContractAt("Token", tokenAddress);
