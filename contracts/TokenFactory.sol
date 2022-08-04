@@ -8,6 +8,7 @@ contract TokenFactory is Ownable {
     address[] public Tokens;
     uint256 public TokenCount;
 
+    event TokenCreated(string name, string symbol, uint256 initialSupply, address tokenAddress)
     constructor() {
         TokenCount = 0;
     }
@@ -24,6 +25,7 @@ contract TokenFactory is Ownable {
         TokenCount++;
         newToken.transferOwnership(msg.sender);
         newToken.transfer(msg.sender, _initialSupply); 
+        emit TokenCreated(name, symbol, initialSupply, address(newToken))
         return address(newToken);
     }
 
